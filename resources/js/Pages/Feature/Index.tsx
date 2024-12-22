@@ -11,7 +11,7 @@ export default function Index({auth, features}: PageProps<{features: PaginatedDa
         </h2>
       }
     >
-      <Head title="Dashboard" />
+      <Head title="Features" />
 
       <div className="py-12">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
