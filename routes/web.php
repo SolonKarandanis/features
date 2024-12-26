@@ -27,7 +27,14 @@ Route::middleware('auth')->group(function () {
             ->name('user.update');
     });
 
-    Route::middleware(['verified','role:' . RolesEnum::Admin->value])->group(function () {
+    Route::middleware([
+        'verified',
+        sprintf('role:%s|%s|%s',
+            RolesEnum::User->value,
+            RolesEnum::Commenter->value,
+            RolesEnum::Admin->value
+        )
+        ])->group(function () {
         Route::get('/dashboard', function () {
             return Inertia::render('Dashboard');
         })->name('dashboard');

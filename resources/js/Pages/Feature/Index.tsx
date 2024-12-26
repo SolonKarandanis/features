@@ -1,10 +1,11 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import {Head, Link} from '@inertiajs/react';
+import {Head, Link, usePoll} from '@inertiajs/react';
 import {Feature, PageProps, PaginatedData} from "@/types";
 import {can} from "@/helpers";
 import FeatureItem from "@/Components/FeatureItem";
 
 export default function Index({auth, features}: PageProps<{features: PaginatedData <Feature>}>) {
+  usePoll(3000);
   return (
     <AuthenticatedLayout
       header={
